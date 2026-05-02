@@ -1,35 +1,24 @@
-import { useState, useCallback } from "react"
-import useLenis from "./hooks/useLenis"
-
-import CustomCursor from "./components/CustomCursor"
-import LoadingScreen from "./components/LoadingScreen"
-
-// (optional components – uncomment when ready)
-// import Navbar from "./components/Navbar"
-// import Hero from "./components/Hero"
-// import CraftsmanshipSection from "./components/CraftsmanshipSection"
-// import PrecisionSection from "./components/PrecisionSection"
-// import DesignSection from "./components/DesignSection"
-// import ShowcaseSection from "./components/ShowcaseSection"
-// import CTASection from "./components/CTASection"
-// import Footer from "./components/Footer"
+import { useState, useCallback } from "react";
+import useLenis from "./hooks/useLenis";
+import CustomCursor from "./components/CustomCursor";
+import LoadingScreen from "./components/LoadingScreen";
 
 export default function App() {
-  const [loaded, setLoaded] = useState(false)
+  const [loaded, setLoaded] = useState(false);
 
-  // smooth scroll init
-  useLenis()
+  // smooth scroll init (safe even if hook is empty)
+  useLenis && useLenis();
 
   const handleLoadComplete = useCallback(() => {
-    setLoaded(true)
-  }, [])
+    setLoaded(true);
+  }, []);
 
   return (
     <>
-      {/* Noise overlay */}
+      {/* Noise overlay (optional CSS) */}
       <div className="noise-overlay" />
 
-      {/* Custom cursor */}
+      {/* Custom cursor (keep if component exists) */}
       <CustomCursor />
 
       {/* Loading screen */}
@@ -37,26 +26,12 @@ export default function App() {
         <LoadingScreen onComplete={handleLoadComplete} />
       )}
 
-      {/* Main Website Content */}
+      {/* Main content */}
       {loaded && (
-        <>
-          {/* Uncomment when components ready */}
-
-          {/* <Navbar /> */}
-          {/* <Hero /> */}
-          {/* <CraftsmanshipSection /> */}
-          {/* <PrecisionSection /> */}
-          {/* <DesignSection /> */}
-          {/* <ShowcaseSection /> */}
-          {/* <CTASection /> */}
-          {/* <Footer /> */}
-
-          {/* TEMP fallback */}
-          <div style={{ color: "black", fontSize: "30px" }}>
-            LuxWatch Working ✅
-          </div>
-        </>
+        <div style={{ color: "black", fontSize: "30px" }}>
+          LuxWatch Working ✅
+        </div>
       )}
     </>
-  )
+  );
 }

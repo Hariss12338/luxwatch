@@ -1,16 +1,10 @@
-import { useState, useCallback } from 'react'
-import { useLenis } from './hooks/useLenis'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import CraftsmanshipSection from './components/CraftsmanshipSection'
-import PrecisionSection from './components/PrecisionSection'
-import DesignSection from './components/DesignSection'
-import ShowcaseSection from './components/ShowcaseSection'
-import CTASection from './components/CTASection'
-import Footer from './components/Footer'
-import CustomCursor from './components/CustomCursor'
-import LoadingScreen from './components/LoadingScreen'
-
+export default function App() {
+  return (
+    <div style={{color: "black", fontSize: "30px"}}>
+      LuxWatch Working ✅
+    </div>
+  );
+}
 /**
  * App — Root component.
  *

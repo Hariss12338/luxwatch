@@ -2,16 +2,23 @@ export default function App() {
   return (
     <div
       style={{
+        height: "100vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
-        fontSize: "30px",
-        color: "black",
-        background: "white"
+        backgroundColor: "#ffffff",
+        fontFamily: "Arial, sans-serif",
       }}
     >
-      LuxWatch Working ✅
+      <h1
+        style={{
+          color: "#000",
+          fontSize: "32px",
+          fontWeight: "bold",
+        }}
+      >
+        LuxWatch Working ✅
+      </h1>
     </div>
   );
 }

@@ -1,25 +1,19 @@
-      import { useState, useCallback } from "react";
+import { useState } from "react";
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
 
-  const handleLoadComplete = useCallback(() => {
-    setLoaded(true);
-  }, []);
-
   return (
-    <>
+    <div style={{ padding: "40px" }}>
       {!loaded && (
-        <button onClick={handleLoadComplete}>
+        <button onClick={() => setLoaded(true)}>
           Load App
         </button>
       )}
 
       {loaded && (
-        <div style={{ color: "black", fontSize: "30px" }}>
-          LuxWatch Working ✅
-        </div>
+        <h1>LuxWatch Working ✅</h1>
       )}
-    </>
+    </div>
   );
 }

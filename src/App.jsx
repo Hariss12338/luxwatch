@@ -1,25 +1,7 @@
-import { useState, useCallback } from "react";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-export default function App() {
-  const [loaded, setLoaded] = useState(false);
-
-  const handleLoadComplete = useCallback(() => {
-    setLoaded(true);
-  }, []);
-
-  return (
-    <>
-      {!loaded && (
-        <button onClick={handleLoadComplete}>
-          Load App
-        </button>
-      )}
-
-      {loaded && (
-        <div style={{ color: "black", fontSize: "30px" }}>
-          LuxWatch Working ✅
-        </div>
-      )}
-    </>
-  );
-}
+export default defineConfig({
+  plugins: [react()],
+  base: './', // ✅ THIS FIXES BLANK SCREEN
+})
